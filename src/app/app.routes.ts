@@ -11,7 +11,7 @@ import { AlbumListComponent } from './components/album/album-list/album-list.com
 
 export const routes: Routes = [    
 
-
+{ path: '', component: GravadoraListComponent, title: 'Lista de Gravadoras'},
 { path: 'gravadoras', component: GravadoraListComponent, title: 'Lista de Gravadoras'},
 { path: 'gravadoras/new', component: GravadoraFormComponent, title: 'Nova Gravadora'},
 { path: 'gravadoras/edit/:id', component: GravadoraFormComponent, resolve: {gravadora: gravadoraResolver}},
