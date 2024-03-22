@@ -9,8 +9,100 @@
                     <mat-error *ngIf="formGroup.get('nome') 
                                    && formGroup.get('nome')?.invalid
                                    && formGroup.get('nome')?.touched">
-                        O nome é obrigatorio!
+                        O nome é obrigatório!
                     </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Ano Lançamento</mat-label>
+                    <input matInput type="text" formControlName="anoLancamento">
+                    <mat-error *ngIf="formGroup.get('anoLancamento') 
+                                   && formGroup.get('anoLancamento')?.invalid
+                                   && formGroup.get('anoLancamento')?.touched">
+                        O Ano do lançamento é obrigatório!
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Descrição</mat-label>
+                    <input matInput type="text" formControlName="descricao">
+                    <mat-error *ngIf="formGroup.get('descricao') 
+                                   && formGroup.get('descricao')?.invalid
+                                   && formGroup.get('descricao')?.touched">
+                        A descrição é obrigatória!
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Preço</mat-label>
+                    <input matInput type="text" formControlName="preco">
+                    <mat-error *ngIf="formGroup.get('preco') 
+                                   && formGroup.get('preco')?.invalid
+                                   && formGroup.get('preco')?.touched">
+                        O preço é obrigatório!
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Produto</mat-label>
+                    <mat-select formControlName="produto">
+                      @for (prod of produtos; track prod) {
+                        <mat-option [value]="prod.nome">{{prod.nome}}</mat-option>
+                      }
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Artistas</mat-label>
+                    <mat-select formControlName="id_artista">
+                      @for (art of listArtistas; track art) {
+                        <mat-option [value]="art.id">{{art.nome}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label>Gravadora</mat-label>
+                    <mat-select formControlName="id_gravadora">
+                      @for (grav of listGravadoras; track grav) {
+                        <mat-option [value]="grav.id">{{grav.nome}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label>Gênero</mat-label>
+                    <mat-select formControlName="id_genero">
+                      @for (gen of listGeneros; track gen) {
+                        <mat-option [value]="gen.id">{{gen.nome}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Estoque</mat-label>
+                    <input matInput type="number" formControlName="estoque">
+                    <mat-error *ngIf="formGroup.get('estoque') 
+                                   && formGroup.get('estoque')?.invalid
+                                   && formGroup.get('estoque')?.touched">
+                        A quantidade do estoque é obrigatória!
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>NomeImagem</mat-label>
+                    <input matInput type="text" formControlName="nomeImagem">
+                    <mat-error *ngIf="formGroup.get('nomeImagem') 
+                                   && formGroup.get('nomeImagem')?.invalid
+                                   && formGroup.get('nomeImagem')?.touched">
+                        O nome da imagem é obrigatório!
+                    </mat-error>
+
                 </mat-form-field>
 
             </form>
